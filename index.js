@@ -15,10 +15,7 @@ function calculateNumber(entry){
     }else{
         if (operation !== ""){
             if (operation == "=") {
-                display.innerHTML="";
-                existingContent = "";
-                operation = "";
-                display.innerHTML=entry;
+                calculateClear(display, entry);
             }
             display.innerHTML=entry;
             operation = "";
@@ -33,4 +30,11 @@ function calculateNumber(entry){
 
 function calculateResult(result){
     existingContent = existingContent + result;
+}
+
+function calculateClear(display, entry){
+    display.innerHTML="";
+    existingContent = "";
+    operation = "";
+    display.innerHTML=entry;
 }
